@@ -13,14 +13,10 @@ module EADLocationGenerator
     File.join(AppConfig[:public_proxy_url], uri)
   end
 
-  def handle_pid
-    "#{AppConfig[:umd_handle_namespace] || 'archives'}:#{identifier}"
-  end
-
   def mint_handle!
     # rubocop:disable LineLength
     handle_service_uri =
-      URI("#{AppConfig[:umd_handle_server_url]}/?action=add&static_url=#{public_url}&pid=#{handle_pid}")
+      URI("#{AppConfig[:umd_handle_server_url]}/?action=add&static_url=#{public_url}")
     # rubocop:enable LineLength
 
     res = ASHTTP.get_response(handle_service_uri)
@@ -42,9 +38,7 @@ module EADLocationGenerator
 
     def create_from_json(json, opts)
       json = super
-
       add_handle(json[:id]) if json[:ead_location].nil?
-
       json
     end
   end
