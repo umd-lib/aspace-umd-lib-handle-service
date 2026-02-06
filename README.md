@@ -78,14 +78,10 @@ The "New Resource" form will be displayed.
 Field | Value
 ----- | -----
 Basic Information - Title | `aspace-umd-lib-handle-service Test Resource`
-Basic Information - Identifier | `ABCD` `1234` `9876` `ZYXW`
-Basic Information - Level of Description | `Collection`
 Basic Information - Publish? | (Left-click to select)
-Dates - Type | `Single`
-Dates - Begin | `2025-12-16`
-Extents - Number | 1
 
-then left-click the "Save Resource" button at the bottom of the form.
+Fill out the remaining required fields, then left-click the
+"Save Resource" button at the bottom of the form.
 
 5\) After the form refreshes, verify that in the "Finding Aid Data" section, the
 "EAD Location" field contains a handle URL. For example, on the test server,
